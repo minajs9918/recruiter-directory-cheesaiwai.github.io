@@ -10,6 +10,67 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--Custom scripts-->
+    <script>
+
+function validateForm() {
+    // var x =  document.getElementById('name').value;
+    // if (x == "") {
+    //     document.getElementById('status').innerHTML = "Name cannot be empty";
+    //     return false;
+    // }
+    // x =  document.getElementById('email').value;
+    // if (x == "") {
+    //     document.getElementById('status').innerHTML = "Email cannot be empty";
+    //     return false;
+    // } else {
+    //     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    //     if(!re.test(x)){
+    //         document.getElementById('status').innerHTML = "Email format invalid";
+    //         return false;
+    //     }
+    // }
+    // x =  document.getElementById('subject').value;
+    // if (x == "") {
+    //     document.getElementById('status').innerHTML = "Subject cannot be empty";
+    //     return false;
+    // }
+    // x =  document.getElementById('message').value;
+    // if (x == "") {
+    //     document.getElementById('status').innerHTML = "Message cannot be empty";
+    //     return false;
+    // }
+ //get input field values data to be sent to server
+    document.getElementById('status').innerHTML = "Sending...";
+    formData = {
+        'name'     : $('input[name=name]').val(),
+        'email'    : $('input[name=email]').val(),
+        'subject'  : $('input[name=subject]').val(),
+        'message'  : $('textarea[name=message]').val()
+    };
+
+
+   $.ajax({
+    url : "mail.php",
+    type: "POST",
+    data : formData,
+    success: function(data, textStatus, jqXHR)
+    {
+
+        $('#status').text(data.message);
+        if (data.code) //If mail was sent successfully, reset the form.
+        $('#contact-form').closest('form').find("input[type=text], textarea").val("");
+    },
+    error: function (jqXHR, textStatus, errorThrown)
+    {
+        $('#status').text(jqXHR);
+    }
+});
+
+
+
+}
+    </script>
     <link rel="stylesheet" type="text/css" href="style.css">
   <style>
 
@@ -24,12 +85,10 @@ p {
   text-align: center;
 }
 #p1 {
-  background-color: #A52A2A;
   width: 300px;
   height: 100%;
 }
 #p2 {
-  background-color: #DEB887;
   width: 50px;
   height: 50px;
 }
@@ -86,8 +145,8 @@ p {
     <div class="collapse" id="myNavbar">
       <ul class="nav navbar-nav visible-xs">
         <li><a class="menu-item" href="#"><span class="glyphicon glyphicon-home"></span>Home</a></li>
-        <li><a class="menu-item" href="#"><span class="glyphicon glyphicon-info-sign"></span>About</a></li> 
-        <li><a class="menu-item" href="#address"><span class="glyphicon glyphicon-certificate"></span>Contact</a></li> 
+        <li><a class="menu-item" href="https://www.linkedin.com/in/saiwai" target="_blank" title="Upcoming Data Science & Analytics Graduate, Master of Science"><span class="glyphicon glyphicon-info-sign"></span>About</a></li> 
+        <li><a class="menu-item" href="#address"><span class="glyphicon glyphicon-earphone"></span>Book Us</a></li> 
       </ul>
     </div>
 
@@ -105,14 +164,14 @@ p {
   <div class="col-lg-6 col-md-6 col-sm-12">
     <div class="content-box">
       <p class="item-name"><span class="glyphicon glyphicon-user">About Me</span></p>
-      <p><iframe width="480" height="315" src="https://www.youtube.com/embed/OU-Gx3WvVxM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+      <p><iframe src="https://www.youtube.com/embed/OU-Gx3WvVxM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
     </div>
   </div>
 
   <div class="col-lg-6 col-md-6 col-sm-12">
     <div class="content-box">
       <p class="item-name"><span class="glyphicon glyphicon-user">Accomplishments</span></p>
-      <p><iframe width="480" height="315" src="https://www.youtube.com/embed/AIzqjZt_nqA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+      <p><iframe src="https://www.youtube.com/embed/AIzqjZt_nqA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
     </div>
   </div>
 
@@ -132,11 +191,11 @@ p {
     </div>
   </div>
 
-<p>&quot;This repository contains all of the proven record used in the current CV called CV, accomplishments and accredited certificates for CHEE SAI WAI&quot;<br> &copy; Copyright CHEE SAI WAI 2020 </p></p>
+<p>&quot;This repository contains all of the proven record used in the current CV called CV, accomplishments and accredited certificates for CHEE SAI WAI&quot;<br> &copy; Copyright CHEE SAI WAI 2020</p>
 
 
 <section id="section1">
-<h1>CV :</h1>
+<h3><a href="#">CV :</a></h3>
 
 
 <p><img id="p1" src="cv-CHEE SAI WAI-1.png" alt="Picture of professional CV" />CV Page 1 of 3</p>
@@ -145,7 +204,7 @@ p {
 </section>
 
 <section id="section2">
-<h1><span class="glyphicon glyphicon-tags">Accomplishments :</span></h1>
+<h3><a href="#">Accomplishments :</a></h3>
 
 
 <ul>
@@ -159,7 +218,7 @@ p {
 
 
 <section id="section3">
-<h1><span class="glyphicon glyphicon-tags">Accredited certificates :</span></h1>
+<h3><a href="#">Accredited certificates :</a></h3>
 
 <ul>
   <li>Crash Course on Python</a></li>
@@ -177,33 +236,111 @@ p {
 </section>
 
 
-<h1><span class="glyphicon glyphicon-tags">Publications :</span></h1>
-<p><img id="p2" src="Library.jpg" alt=""/ ><p style="font-size: 0.9rem;font-style: italic;"><a href="https://www.flickr.com/photos/22419112@N08/2666095497">"Library"</a><span> by <a href="https://www.flickr.com/photos/22419112@N08">-Marlith-</a></span> is licensed under <a href="https://creativecommons.org/licenses/by/2.0/" style="margin-right: 5px;">CC BY 2.0</a><a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener noreferrer" style="display: inline-block;white-space: none;margin-top: 2px;margin-left: 3px;height: 22px !important;"><img style="height: inherit;margin-right: 3px;display: inline-block;" src="https://search.creativecommons.org/static/img/cc_icon.svg" /><img style="height: inherit;margin-right: 3px;display: inline-block;" src="https://search.creativecommons.org/static/img/cc-by_icon.svg" /></a><br>&quot;As much as we’d love to help, we cannot send you the origin directly; the research paper can only be downloaded from our publication site.&quot;<a href="http://www.ijcrset.com/files/V1-I2-02.pdf" target="_blank">Continue&#8230;</a></p>  
+<h3><a href="#">Publications :</a></h3>
+<p><img id="p2" src="Library.jpg" alt=""/ ><p style="font-size: 0.9rem;font-style: italic;"><a href="https://www.flickr.com/photos/22419112@N08/2666095497">"Library"</a><span> by <a href="https://www.flickr.com/photos/22419112@N08">-Marlith-</a></span> is licensed under <a href="https://creativecommons.org/licenses/by/2.0/" style="margin-right: 5px;">CC BY 2.0</a><a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener noreferrer" style="display: inline-block;white-space: none;margin-top: 2px;margin-left: 3px;height: 22px !important;"><img style="height: inherit;margin-right: 3px;display: inline-block;" src="https://search.creativecommons.org/static/img/cc_icon.svg" /><img style="height: inherit;margin-right: 3px;display: inline-block;" src="https://search.creativecommons.org/static/img/cc-by_icon.svg" /></a><span><br><b>As much as we’d love to help, we cannot send you the origin directly; the research paper can only be downloaded from our publication site.</b><a href="http://www.ijcrset.com/files/V1-I2-02.pdf" target="_blank">Continue&#8230;</span></a></p>  
 
   <footer class="panel-footer">
     <div class="container">
       <div class="row">
-        <section id="hours" class="col-sm-4">
-          <span>For interview:</span><br>
-          Sun-Thurs: 11:15am - 5:00pm<br>
-          
-          
-          <hr class="visible-xs">
-        </section>
-        <section id="address" class="col-sm-4">
-          <span>Contact:</span><br>
-          <span class="glyphicon glyphicon-phone">Whatsapp</span><br>
-          
-          <span><img id="p1" src="shared_qr_code.png" alt="Picture of Whatsapp qr reader" /></span>
-          <hr class="visible-xs">
-        </section>
-        <section id="testimonials" class="col-sm-4">
-      
-          <span>"Trust me if I can drive your company!"</span>
-        </section>
-      </div>
-      <div class="text-center">&copy; Copyright CHEE SAI WAI 2020</div>
+        <section id="hours" class="col-md-12">
+          <!--Section: Contact v.2-->
+<section class="mb-4">
+<section id="address">
+    <!--Section heading-->
+    <h2 class="h1-responsive font-weight-bold text-center my-4">Book us to <em>CHEE SAI WAI</em></h2>
+    <!--Section description-->
+    <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to contact me directly. Thank you for your time in this interview. <br>If you would like to offer me to be a full time worker, I would love to hear from you! Here is where you would go to email and interview..</p>
+
+    <div class="row">
+
+        <!--Grid column-->
+        <div class="col-md-9 mb-md-0 mb-5">
+            <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+
+                <!--Grid row-->
+                <div class="row">
+
+                    <!--Grid column-->
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <input type="text" id="name" name="name" class="form-control">
+                            <label for="name" class="">Your name</label>
+                        </div>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <input type="text" id="email" name="email" class="form-control">
+                            <label for="email" class="">Your email</label>
+                        </div>
+                    </div>
+                    <!--Grid column-->
+
+                </div>
+                <!--Grid row-->
+
+                <!--Grid row-->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="md-form mb-0">
+                            <input type="text" id="subject" name="subject" class="form-control">
+                            <label for="subject" class="">Subject</label>
+                        </div>
+                    </div>
+                </div>
+                <!--Grid row-->
+
+                <!--Grid row-->
+                <div class="row">
+
+                    <!--Grid column-->
+                    <div class="col-md-12">
+
+                        <div class="md-form">
+                            <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
+                            <label for="message">Your message</label>
+                        </div>
+
+                    </div>
+                </div>
+                <!--Grid row-->
+
+            </form>
+
+            <div class="text-center text-md-left">
+                <a class="btn btn-primary" onclick="validateForm();">Send</a>
+            </div>
+            <div class="status"></div>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-md-3 text-center">
+            <ul class="list-unstyled mb-0">
+                <li><i class="fas fa-map-marker-alt fa-2x"></i>
+                    <p>Connect with me on LinkedIn:<br> <a href="https://www.linkedin.com/in/saiwai" target="_blank" title="Connect my LinkedIn profile!">https://www.linkedin.com/in/saiwai</a></p>
+                </li>
+                <li><i class="fas fa-map-marker-alt fa-2x"></i>
+                    <p>Like and Sign up on Facebook:<br> <a href="https://www.facebook.com/HWonderMind-Tutor-102114211483329/" target="_blank" title="Like my Facebook page!">https://www.facebook.com/HWonderMind-Tutor-102114211483329/</a></p>
+                </li>
+                <li><i class="fas fa-phone mt-4 fa-2x"></i>
+                    <p>+ 60 149062361</p>
+                </li>
+
+                <li><i class="fas fa-envelope mt-4 fa-2x"></i>
+                    <p>dean93sw@gmail.com</p>
+                </li>
+            </ul>
+        </div>
+        <!--Grid column-->
+
     </div>
+</section>
+</section>
+<!--Section: Contact v.2-->
+          
   </footer>
   </div>
   </body>

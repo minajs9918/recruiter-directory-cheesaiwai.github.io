@@ -10,7 +10,7 @@
 }
 
 .navbar-brand{
-  font-size: 35px;
+  font-size: 25px;
   color: white;
   padding-left: 25px;
 }
@@ -25,7 +25,7 @@
 }
 
 .navbar-nav{
-  font-size: 25px;
+  font-size: 15px;
   text-align: center;
   margin: 0;
   padding: 0;
@@ -82,13 +82,13 @@ li{
 	height: auto;
 	color: black;
 	background-color: rgba(0,0,0,0.2);
-	font-family: "Comic Sans MS", cursive, sans-serif;
+	font-family: Helvatica, Arial, sans-serif;
 	padding: 20px;
 }
 
 .item-name{
 	text-align: center;
-	font-size: 20px;
+	font-size: 15px;
 	font-weight: bold;
 }
 
