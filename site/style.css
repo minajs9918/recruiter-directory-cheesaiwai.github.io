@@ -84,11 +84,13 @@ li{
   box-shadow: 0 1px 5px 1px #cccccc;
 }
 #menu-tile {
-  background: url("https://amymhaddad.s3.amazonaws.com/morocco-blue.png") no-repeat;
+  background: url("https://amymhaddad.s3.amazonaws.com/morocco-blue.png"); 
+  background-repeat: no-repeat;
   background-position: center;
 }
 #specials-tile {
-  background: url("https://amymhaddad.s3.amazonaws.com/oriental-tiles.png") no-repeat;
+  background: url("https://amymhaddad.s3.amazonaws.com/oriental-tiles.png");
+  background-repeat: no-repeat;
   background-position: center;
 }
 #menu-tile span, #specials-tile span, #map-tile span {
