@@ -84,11 +84,11 @@ li{
   box-shadow: 0 1px 5px 1px #cccccc;
 }
 #menu-tile {
-  background: url('../images/team meeting.jpg') no-repeat;
+  background: url('https://www.flickr.com/photos/38890715@N08/6148010229') no-repeat;
   background-position: center;
 }
 #specials-tile {
-  background: url('../images/thumbs up.jpg') no-repeat;
+  background: url('https://www.flickr.com/photos/42673922@N03/4857593259') no-repeat;
   background-position: center;
 }
 #menu-tile span, #specials-tile span, #map-tile span {
