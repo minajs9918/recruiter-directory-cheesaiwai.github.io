@@ -10,69 +10,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!--Custom scripts-->
-    <script>
-
-function validateForm() {
-    // var x =  document.getElementById('name').value;
-    // if (x == "") {
-    //     document.getElementById('status').innerHTML = "Name cannot be empty";
-    //     return false;
-    // }
-    // x =  document.getElementById('email').value;
-    // if (x == "") {
-    //     document.getElementById('status').innerHTML = "Email cannot be empty";
-    //     return false;
-    // } else {
-    //     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    //     if(!re.test(x)){
-    //         document.getElementById('status').innerHTML = "Email format invalid";
-    //         return false;
-    //     }
-    // }
-    // x =  document.getElementById('subject').value;
-    // if (x == "") {
-    //     document.getElementById('status').innerHTML = "Subject cannot be empty";
-    //     return false;
-    // }
-    // x =  document.getElementById('message').value;
-    // if (x == "") {
-    //     document.getElementById('status').innerHTML = "Message cannot be empty";
-    //     return false;
-    // }
- //get input field values data to be sent to server
-    document.getElementById('status').innerHTML = "Sending...";
-    formData = {
-        'name'     : $('input[name="name"]').val(),
-        'email'    : $('input[name="email"]').val(),
-        'subject'  : $('input[name="subject"]').val(),
-        'message'  : $('textarea[name="message"]').val()
-    };
-
-
-   $.ajax({
-    url : "mail.php",
-    type: "POST",
-    data : formData,
-    success: function(data, textStatus, jqXHR)
-    {
-
-        $('#status').text(data.message);
-        if (data.code) //If mail was sent successfully, reset the form.
-        $('#contact-form').closest('form').find("input[type=text], textarea").val("");
-    },
-    error: function (jqXHR, textStatus, errorThrown)
-    {
-        $('#status').text(jqXHR);
-    }
-});
-
-
-
-}
-    </script>
     <link rel="stylesheet" type="text/css" href="style.css">
-  <style>
+
+<style>
 
 /********** Base styles **********/
 h1 {
@@ -103,10 +43,7 @@ p {
   width: 90%;
   min-height: 240px;
 }
-#contact-form .input-group > input,
-#contact-form .input-group > textarea {
-  margin-top: 1px;
-}
+
 
 /********** Large devices only **********/
 @media (min-width: 1200px) {
@@ -147,7 +84,10 @@ p {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span> 
       </button>
-      <a class="navbar-brand" href="#">CHEE SAI WAI-Video RESUME</a>
+      <div style="float: left; width: 60%; margin-right: 1%; margin-bottom: 0.5em;" class="navbar-brand">CHEE SAI WAI-Video RESUME
+      </div>
+      <a style="float: left; font-size: 9pt; width: 20%; margin-right: 1%; margin-bottom: 0.5em;" class="navbar-brand" href="mailto:dean93sw@gmail.com?subject=Interview%20Invitation" target="_blank"><span class="glyphicon glyphicon-envelope"> Email Me</a>
+      <a style="float: left; font-size: 9pt; width: 20%; margin-right: 1%; margin-bottom: 0.5em;" class="navbar-brand" href="https://www.linkedin.com/in/saiwai" target="_blank" title="Connect My LinkedIn"><img class="img1" src="linkedin.png" alt="linkedin">Connect My LinkedIn</a>
     </div>
 
     <div class="collapse" id="myNavbar">
@@ -170,14 +110,14 @@ p {
 
   <div class="row">
 
-  <div class="col-lg-6 col-md-6 col-sm-12">
+  <div class="col-lg-6 col-md-6 col-sm-6">
     <div class="content-box">
       <p class="item-name"><span class="glyphicon glyphicon-user">About Me</span></p>
       <p><iframe class="yt-video" src="https://www.youtube.com/embed/OU-Gx3WvVxM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
     </div>
   </div>
 
-  <div class="col-lg-6 col-md-6 col-sm-12">
+  <div class="col-lg-6 col-md-6 col-sm-6">
     <div class="content-box">
       <p class="item-name"><span class="glyphicon glyphicon-user">Accomplishments</span></p>
       <p><iframe class="yt-video" src="https://www.youtube.com/embed/AIzqjZt_nqA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
@@ -185,38 +125,14 @@ p {
   </div>
 
 
-  <div class="col-lg-12 col-md-12 col-sm-12">
-    <div class="content-box">
-      <p class="item-name"><span class="glyphicon glyphicon-user">Welcome to my online portfolio</span></p>
-      <section>
-    <ul>
-      <!-- Link to every section in the page -->
-      <li><a href="#section1">Softcopy CV</a></li>
-      <li><a href="#section2">Softcopy Accomplishments</a></li>
-      <li><a href="#section3">Softcopy Accredited Certificate</a></li>
-      <li><a href="#address">Contact card</a></li>
-      </ul>
-      <div id="home-tiles" class="row">
-      <div class="col-md-4 col-sm-6 col-xs-12">
-        <a href="menu-categories.html"><div id="menu-tile"><span>curricular activities</span></div></a>
-      </div>
-      <div class="col-md-4 col-sm-6 col-xs-12">
-        <a href="single-category.html"><div id="specials-tile"><span>testimonials</span></div></a>
-      </div>
-      <div class="col-md-4 col-sm-12 col-xs-12">
-          <div id="map-tile">
-            <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="250" id="gmap_canvas" src="https://maps.google.com/maps?q=universiti%20sains%20malaysia&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://fmovies2.org">fmovies</a></div><style>.mapouter{position:relative;text-align:right;height:250px;width:600px;}.gmap_canvas {overflow:hidden;background:none!important;height:250px;width:600px;}</style></div>
-            <span>map</span>
-          </div>
-        </a>
-      </div>
-    </div><!-- End of #home-tiles -->
-  </div><!-- End of #main-content -->
-    </section>
-    </div>
-  </div>
-  </div>
-  <p>&quot;This repository contains all of the proven record used in the current CV called CV, accomplishments and accredited certificates for CHEE SAI WAI&quot;<br> &copy; Copyright CHEE SAI WAI 2020</p>
+<div>
+<h3><center>Hire me for your company, because my work is <b>off the hizzle</b>.</center></h3>
+<span><center>______________</center></span>
+<p class="lime">Unsure which CV section your company is using? No problem!<br /> Simply click to <a href="#section1" style="font-size: smaller;">Softcopy CV</a> / <a href="#section2" style="font-size: smaller;">Softcopy Accomplishments</a> / <a href="#section3" style="font-size: smaller;">Softcopy Accredited Certificate</a> to find out.<hr>&quot;This repository contains all of the proven record used in Github called CV, accomplishments and accredited certificates for <b>CHEE SAI WAI</b>&quot;</p>
+</div>
+
+<!-- End of #main-content -->
+ 
 
 
   <section id="section1">
@@ -241,6 +157,32 @@ p {
   </ul>
   </section>
 
+<h1>The Practicum's Review Site</h1>
+
+<div class="main">
+
+<div class="intro">
+<p style="text-align: left">
+Here you'll learn about the greatest social activity (not) written.</p>
+<p style="text-align: left">The reviews on this Web site do correspond to personal experiences.</p>
+</div>
+
+<div class="review">
+<h2>Social Activity</h2>
+<p class="byline">Sai Wai</p>
+<img class="img1" src="scowl_small.jpg" alt="Face">
+<p style="text-align: justify;">How long can I do this activity? With this December, I still seek a practicum placement and social contracting. I did spending my time with a client of Data Science background for group consulting project. This explains how to level the playing field and take on a challenge you can really master. So throw away those old self-help books and start accomplishing something!</p>
+<p class="reviewEnd"><a href="https://www.linkedin.com/in/saiwai" target="_blank">Read more ...</a></p>
+</div>
+
+<div class="review">
+<h2>Club public speaker: Great Activity to Mobilize Action</h2>
+<p class="byline">Sai Wai</p>
+<img class="img1" src="house_small.jpg" alt="Face">
+<p style="text-align: justify;">Club is brimming with social attractions: government agency, MNC companies, public universities and much more. Over the year, I am fear when creative speaking in a large meeting. But how I can change now? I have managed to overcome shy. This provides detailed plans that explain how to involve technology and start accomplishing something using <a href="https://drive.google.com/file/d/1ntPlKxbUla4iNvEh-L5mlaJf_SuvOq9C/view?usp=drivesdk" target="_blank">Canva</a> and <a href="https://youtu.be/5_RVqtJXToY" target="_blank">Youtube</a>!</p>
+<p class="reviewEnd"><a href="https://www.linkedin.com/in/saiwai" target="_blank">Read more ...</a></p>
+</div>
+</div>
 
   <section id="section3">
   <h3><a href="#">Accredited certificates :</a></h3>
@@ -262,121 +204,12 @@ p {
 
   <section>
     <h3><a href="#">Publications :</a></h3>
-    <p><img id="p2" src="Library.jpg" alt=""/ ><p style="font-size: 0.9rem;font-style: italic;"><a href="https://www.flickr.com/photos/22419112@N08/2666095497">"Library"</a><span> by <a href="https://www.flickr.com/photos/22419112@N08">-Marlith-</a></span> is licensed under <a href="https://creativecommons.org/licenses/by/2.0/" style="margin-right: 5px;">CC BY 2.0</a><a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener noreferrer" style="display: inline-block;white-space: none;margin-top: 2px;margin-left: 3px;height: 22px !important;"><img style="height: inherit;margin-right: 3px;display: inline-block;" src="https://search.creativecommons.org/static/img/cc_icon.svg" /><img style="height: inherit;margin-right: 3px;display: inline-block;" src="https://search.creativecommons.org/static/img/cc-by_icon.svg" /></a><span><br><b>As much as we’d love to help, we cannot send you the origin directly; the research paper can only be downloaded from our publication site.</b><a href="http://www.ijcrset.com/files/V1-I2-02.pdf" target="_blank">Continue&#8230;</span></a></p> 
+    <p><img id="p2" class="img1" src="Library.jpg" alt=""/ ><p style="font-size: 0.9rem;font-style: italic;"><a href="https://www.flickr.com/photos/22419112@N08/2666095497">"Library"</a><span> by <a href="https://www.flickr.com/photos/22419112@N08">-Marlith-</a></span> is licensed under <a href="https://creativecommons.org/licenses/by/2.0/" style="margin-right: 5px;">CC BY 2.0</a><a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener noreferrer" style="display: inline-block;white-space: none;margin-top: 2px;margin-left: 3px;height: 22px !important;"><img style="height: inherit;margin-right: 3px;display: inline-block;" src="https://search.creativecommons.org/static/img/cc_icon.svg" /><img style="height: inherit;margin-right: 3px;display: inline-block;" src="https://search.creativecommons.org/static/img/cc-by_icon.svg" /></a><span style="font-size: x-large;"><br><b>As much as we’d love to help, we cannot send you the origin directly; <br>the research paper can only be downloaded from our publication site.</b><a href="http://www.ijcrset.com/files/V1-I2-02.pdf" target="_blank">Continue&#8230;</span></a></p> 
   </section>
- 
+ <p style="clear: both;">
 
     <footer class="panel-footer">
-      <div class="container">
-        <div class="row">
-          <section id="hours" class="col-md-12">
-            <!--Section: Contact v.2-->
-      <section class="mb-4">
-        <section id="address">
-            <!--Section heading-->
-            <h2 class="h1-responsive font-weight-bold text-center my-4">Book us to <b>CHEE SAI WAI</b></h2>
-            <!--Section description-->
-            <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to contact me directly. Thank you for your time in this interview. <br>If you would like to offer me to be a full time worker, I would love to hear from you! Here is where you would go to email and interview..</p>
-
-            <div class="row">
-
-                <!--Grid column-->
-                <div class="col-md-9 mb-md-0 mb-5">
-                    <form id="contact-form" name="contact-form" action="mail.php" method="POST">
-
-                        <!--Grid row-->
-                        <div class="row">
-
-                            <!--Grid column-->
-                            <div class="form-group col-md-6">
-                                <div class="md-form mb-0">
-                                  <label for="name" class="">Your name</label>
-                                  <div class="input-group">
-                                    <span class="input-group-addon glyphicon glyphicon-user"></span>
-                                    <input type="text" id="name" name="name" class="form-control">  
-                                  </div>
-                                </div>
-                            </div>
-                            <!--Grid column-->
-
-                            <!--Grid column-->
-                            <div class="form-group col-md-6">
-                                <div class="md-form mb-0">
-                                  <label for="email" class="">Your email</label>
-                                  <div class="input-group">
-                                    <span class="input-group-addon glyphicon glyphicon-envelope"></span>
-                                    <input type="text" id="email" name="email" class="form-control">  
-                                  </div>
-                                </div>
-                            </div>
-                            <!--Grid column-->
-
-                        </div>
-                        <!--Grid row-->
-
-                        <!--Grid row-->
-                        <div class="row">
-                            <div class="form-group col-md-12">
-                                <div class="md-form mb-0">
-                                    <label for="subject" class="">Subject</label>
-                                    <div class="input-group">
-                                      <span class="input-group-addon glyphicon glyphicon-pencil"></span>
-                                      <input type="text" id="subject" name="subject" class="form-control"> 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Grid row-->
-
-                        <!--Grid row-->
-                        <div class="row">
-
-                            <!--Grid column-->
-                            <div class="form-group col-md-12">
-                                <div class="md-form">
-                                  <label for="message">Your message</label>
-                                   <div class="input-group">
-                                      <span class="input-group-addon glyphicon glyphicon-edit"></span>
-                                      <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <!--Grid row-->
-                        <div class="text-center text-md-left">
-                        <a class="btn btn-primary" onclick="validateForm();">Send</a>
-                        </div>
-                        <div id="status" class="status"></div>
-                    </form>
-
-                   
-                </div>
-                <!--Grid column-->
-
-                <!--Grid column-->
-                <div class="col-md-3 text-center">
-                    <ul class="list-unstyled mb-0">
-                        <li><i class="fas fa-map-marker-alt fa-2x"></i>
-                            <p>Connect with me on LinkedIn:<br> <a href="https://www.linkedin.com/in/saiwai" target="_blank" title="Connect my LinkedIn profile!">https://www.linkedin.com/in/saiwai</a></p>
-                        </li>
-                        <li><i class="fas fa-map-marker-alt fa-2x"></i>
-                            <p>Like and Sign up on Facebook:<br> <a href="https://www.facebook.com/HWonderMind-Tutor-102114211483329/" target="_blank" title="Like my Facebook page!">https://www.facebook.com/HWonderMind-Tutor-102114211483329/</a></p>
-                        </li>
-                        <li><i class="fas fa-phone mt-4 fa-2x"></i>
-                            <p>+ 60 149062361</p>
-                        </li>
-
-                        <li><i class="fas fa-envelope mt-4 fa-2x"></i>
-                            <p>dean93sw@gmail.com</p>
-                        </li>
-                    </ul>
-                </div>
-                <!--Grid column-->
-            </div>
-        </section>
-      </section>
-      <!--Section: Contact v.2-->   
+     <p>2020 &copy; minajs9918.github.io All Rights Reserved.</p>
     </footer>
   </body>
 </html>
