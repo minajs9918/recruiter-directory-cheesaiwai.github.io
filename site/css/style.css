@@ -27,6 +27,34 @@ label {
     color: #777;
 }
 
+.copyright {
+    color: #6D6D6D;
+    background: #000;
+    padding: 20px 0;
+    line-height: 34px;
+}
+#top {
+    position: relative;
+}
+.topHome {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 5;
+    background: #FF7A00;
+}
+.topHome .fa-2x {
+    font-size: 20px;
+    color: #fff;
+    margin: 4px;
+}
+h2 {
+    font-size: 40px;
+    margin: 0;
+    padding-bottom: 16px;
+    font-variant: small-caps;
+}
+
 /* Header */
 #head {
     background: #181015 url( ../images/bg_header.jpg) no-repeat;
@@ -236,3 +264,139 @@ img.pull-left {
     margin-top: 20px;
 } 
 
+/*--- Banner ----*/
+.banner-container {
+    width: 100%;
+    position: relative;
+    padding: 0px;
+    box-shadow: 0px 0px 1px rgba(0,0,0,0.4);
+    /*background: url("../images/banner-bg.jpg") no-repeat;*/
+    background-size: 100% 100%;
+    background-size: cover;
+    position: relative;
+}
+.banner-container > img {
+    width: 100%;
+    
+}
+.banner-content {
+    position: absolute;
+    z-index: 3;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+}
+.banner-content h2 {
+    color: #fff;
+    font-size: 3.5em;
+    margin: 2% 0 30px;
+    line-height: 1.2em;
+}
+.banner-content p {
+    font-size: 1.6em;
+    font-weight: normal;
+    font-style: normal;
+    color: #fff;
+}
+.heroText {
+    margin-top: 20%;
+}
+.heroText h2 {
+    border: none;
+    color: #FFF;
+    text-transform: uppercase;
+    line-height: 50px;
+    padding-bottom: 0;
+    font-size: 45px;
+    margin-bottom: 35px;
+    font-weight: bold;
+}
+.heroText h2 span {
+    border: none;
+    color: #FFF;
+    text-transform: uppercase;
+    line-height: 50px;
+    padding-bottom: 0;
+    font-size: 45px;
+    margin-bottom: 35px;
+    font-weight: normal;
+}
+.caption {
+    border-bottom: 1px solid #7a7a7a;
+    border-top: 1px solid #7a7a7a;
+    color: #aeaeae;
+    padding: 15px 0;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+.heading {
+    padding: 3px 10px;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    display: block;
+}
+.pdingBtm30 {
+    padding-bottom: 30px;
+}
+.da-arrows span:after {
+    width: 25px;
+    height: 24px;
+}
+.da-arrows span {
+    position: absolute;
+    top: 50%;
+    height: 34px;
+    width: 34px;
+    border-radius: 60px;
+    background: none;
+}
+.da-dots span {
+    display: inline-block;
+    position: relative;
+    width: 16px;
+    height: 16px;
+    border-radius: 0px;
+    background: rgba(255, 255, 255, 0.13);
+    margin: 3px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.6) inset, 1px 1px 1px rgba(255,255,255,0.1);
+    border: 2px solid rgba(255, 255, 255, 0.6);
+}
+.secPad {
+    padding: 60px 0;
+}
+/*Intro Content*/
+#introText {
+    padding: 50px 0;
+    background: #FF7A00;
+}
+#introText h1 {
+    font-size: 40px;
+    margin: 0;
+    padding-bottom: 16px;
+    font-variant: small-caps;
+    color: #fff;
+}
+#introText p {
+    color: #FFD2A8;
+    font-size: 16px;
+}
+#aboutUs{
+padding-top:60px;   
+    }
+#aboutUs .txtHead {
+    background: #fff;
+    padding: 20px 10px;
+}
+#aboutUs .txtHead .fa {
+    font-size: 58px;
+    color: #5E5E5E;
+}
+.tileBox p {
+    background-color: #f0f0f0;
+    font-size: 15px;
+    color: #777777;
+    padding: 20px;
+    margin: 0px;
+}
